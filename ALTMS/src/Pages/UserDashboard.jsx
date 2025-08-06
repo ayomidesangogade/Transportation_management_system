@@ -5,17 +5,14 @@ import {
   XCircle,
   ListChecks,
   Bus,
-  ChevronRight,
-  Bell,
   Settings,
   LayoutDashboard,
   FileClock,
   BookMarked,
-  User,
-  Menu,
-  X,
 } from "lucide-react";
 import SideBar from "../Components/SideBar"
+import Header from "../Components/Header";
+import QuickLink from "../Components/QuickLink";
 
 const stats = [
   { label: "Total Requests Made", value: 12, icon: ListChecks },
@@ -59,34 +56,9 @@ export default function StaffDashboard() {
         />
       )}
       {/* Main area */}
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col md:ml-64">
         {/* Header */}
-        <header className="h-16 bg-white shadow-sm flex items-center justify-between px-3 sm:px-4 md:px-6">
-          <div className="flex items-center gap-2 sm:gap-3">
-            {/* Hamburger (mobile) */}
-            <button
-              className="p-2 rounded-lg bg-gray-100 text-gray-700 md:hidden"
-              onClick={() => setSidebarOpen(!sidebarOpen)}
-            >
-              {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
-            <h1 className="text-base font-semibold text-gray-700 hidden md:block">
-              Staff Dashboard
-            </h1>
-          </div>
-          <div className="flex items-center gap-2 sm:gap-4 text-gray-700">
-            <button className="p-2 hover:bg-gray-100 rounded-lg">
-              <Bell size={20} />
-            </button>
-            <button className="p-2 hover:bg-gray-100 rounded-lg">
-              <Settings size={20} />
-            </button>
-            <button className="p-2 hover:bg-gray-100 rounded-lg">
-              <User size={20} />
-            </button>
-          </div>
-        </header>
-
+        <Header state={sidebarOpen} name="Staff Dashboard" setSidebarOpen={() => setSidebarOpen(!sidebarOpen)} />
         {/* Scrollable content */}
         <main className="p-3 sm:p-4 md:p-6 space-y-6 sm:space-y-8 overflow-y-auto flex-1">
           {/* Summary stats */}
@@ -167,13 +139,4 @@ export default function StaffDashboard() {
 
 function Arrow() {
   return <span className="mx-1 text-gray-400">→</span>;
-}
-
-function QuickLink({ label }) {
-  return (
-    <button className="w-full bg-white rounded-lg shadow-sm px-4 py-3 flex items-center justify-between hover:bg-gray-50">
-      <span className="text-sm font-medium text-gray-800">{label}</span>
-      <ChevronRight size={18} className="text-gray-400" />
-    </button>
-  );
 }

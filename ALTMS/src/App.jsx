@@ -6,7 +6,7 @@ import RequestTransportPage from "./Pages/RequestTransportPage"
 
 function App() {
   return (
-    <StaffDashboard />
+    <DriverDashboard />
   )
 }
 

@@ -1,21 +1,16 @@
 import React, { useState } from "react";
 import {
-  Bell,
-  Settings,
-  User,
   Truck,
   CalendarRange,
   Map,
   BarChart2,
-  Menu,
-  X,
   LayoutDashboard,
 } from "lucide-react"
 import SideBar from "../Components/SideBar";
 import PieChart from "../Components/PieChart";
 import DriversCard from "../Components/DriversCard";
-import IconButton from "../Components/IconButton";
 import Legend from "../Components/Legend";
+import Header from "../Components/Header";
 
 const stats = [
   { label: "Total Vehicles", value: 120 },
@@ -74,26 +69,7 @@ export default function AdminDashboard() {
       {/* Main wrapper */}
       <div className="flex-1 flex flex-col md:pl-64">
         {/* Header */}
-        <header className="h-16 bg-white shadow-sm flex items-center justify-between px-4 sm:px-6">
-          <div className="flex items-center gap-3">
-            {/* Hamburger */}
-            <button
-              className="p-2 rounded-lg bg-gray-100 text-gray-700 md:hidden"
-              onClick={() => setSidebarOpen(!sidebarOpen)}
-            >
-              {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
-            <h1 className="text-base font-semibold text-gray-700 hidden md:block">
-              Admin Dashboard
-            </h1>
-          </div>
-          <div className="flex items-center gap-2 sm:gap-4 text-gray-700">
-            <IconButton icon={Bell} />
-            <IconButton icon={Settings} />
-            <IconButton icon={User} />
-          </div>
-        </header>
-
+        <Header state={sidebarOpen} name="Admin Dashboard" setSidebarOpen={() => setSidebarOpen(!sidebarOpen)} />
         {/* Scrollable content */}
         <main className="p-4 sm:p-6 space-y-6 overflow-y-auto flex-1">
           {/* Stat cards */}

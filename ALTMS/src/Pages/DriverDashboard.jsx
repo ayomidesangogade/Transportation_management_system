@@ -1,24 +1,20 @@
 import React, { useState } from "react";
 import {
-  Home,
   ClipboardList,
   Truck,
   Users,
   BarChart2,
   Settings,
   CheckCircle,
-  User,
-  Bell,
-  MessageSquare,
   Map as MapIcon,
   Calendar as CalendarIcon,
-  Menu,
-  X,
 } from "lucide-react";
-import UILogo from "../images/university-of-ibadan-logo-transparent.png"
+import Header from "../Components/Header";
+import SideBar from "../Components/SideBar";
+import StatCard from "../Components/StatCard";
 
 const navItems = [
-  { label: "Dashboard", icon: CheckCircle, active: true },
+  { label: "Dashboard", icon: CheckCircle},
   { label: "Request Tracker", icon: ClipboardList },
   { label: "Vehicle Management", icon: Truck },
   { label: "Driver List", icon: Users },
@@ -39,57 +35,18 @@ export default function DriverDashboard() {
   return (
     <div className="min-h-screen flex text-gray-800 overflow-hidden">
       {/* Sidebar */}
-      <aside
-        className={`fixed inset-y-0 left-0 z-20 w-64 bg-[#059669] text-white transform transition-transform md:translate-x-0 md:static ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
-      >
-        <div className="h-16 flex items-center justify-between px-5 border-b border-white/10">
-          <div className="h-16 flex items-center px-6 border-b">
-                    <img src={UILogo} alt="UI crest" className="h-10 w-15" />
-                    <span className="font-extrabold text-lg">ALTMS</span>
-            </div>
-          <button className="md:hidden text-white" onClick={() => setSidebarOpen(false)}>
-            <X size={20} />
-          </button>
-        </div>
-        <nav className="p-4 space-y-1">
-          {navItems.map(({ label, icon: Icon, active }) => (
-            <a
-              key={label}
-              href="#" // hook up routes later
-              className={`flex items-center gap-3 px-4 py-3 rounded-lg transition ${active ? "bg-white/10" : "hover:bg-white/5"}`}
-            >
-              <Icon size={18} />
-              <span className="truncate">{label}</span>
-            </a>
-          ))}
-        </nav>
-      </aside>
-
+      <SideBar state={sidebarOpen} onClose={() => setSidebarOpen(!sidebarOpen)} navItems={navItems} />
       {/* Backdrop for mobile */}
       {sidebarOpen && <div className="fixed inset-0 bg-black/40 z-10 md:hidden" onClick={() => setSidebarOpen(false)} />}
 
       {/* Main section */}
-      <section className="flex-1 min-h-screen bg-[#fafaf7] flex flex-col">
+      <section className="flex-1 flex bg-[#fafaf7] flex-col md:pl-64">
         {/* Header */}
-        <header className="h-16 bg-white shadow-sm flex items-center justify-between px-4 md:px-6">
-          <div className="flex items-center gap-3">
-            <button
-              className="p-2 rounded-lg bg-gray-100 text-gray-700 md:hidden"
-              onClick={() => setSidebarOpen(!sidebarOpen)}
-            >
-              {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
-            <h1 className="text-base font-semibold text-gray-700 hidden md:block">
-              Driver Dashboard
-            </h1>
-          </div>
-          <div className="flex items-center gap-4 text-[#06203c]">
-            <IconButton icon={MessageSquare} />
-            <IconButton icon={User} />
-            <IconButton icon={Bell} />
-          </div>
-        </header>
-
+        <Header
+          state={sidebarOpen}
+          name="Driver Dashboard"
+          setSidebarOpen={() => setSidebarOpen(!sidebarOpen)}
+        />
         {/* Scrollable content */}
         <main className="p-6 space-y-6 overflow-y-auto flex-1">
           {/* Top cards */}
@@ -143,28 +100,6 @@ export default function DriverDashboard() {
           </div>
         </main>
       </section>
-    </div>
-  );
-}
-
-// -----------------------------------------------------------------------------
-// Helper components
-// -----------------------------------------------------------------------------
-function IconButton({ icon: Icon }) {
-  return (
-    <button className="p-2 hover:bg-gray-200 rounded-lg">
-      <Icon size={20} />
-    </button>
-  );
-}
-
-function StatCard({ title, value }) {
-  return (
-    <div className="bg-white rounded-xl shadow-sm p-6 flex flex-col justify-between">
-      <h4 className="font-medium text-sm text-gray-600 leading-snug max-w-[12ch]">
-        {title}
-      </h4>
-      <p className="text-3xl font-semibold mt-4">{value}</p>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { act } from "react"
 import {
   CheckCircle,
   Clock,
@@ -35,7 +35,7 @@ const statusColours = {
 };
 
 const navItems = [
-  { label: "Dashboard", icon: LayoutDashboard },
+  { label: "Dashboard", icon: LayoutDashboard, active: true },
   { label: "Request Transport", icon: FileClock },
   { label: "Booking History", icon: BookMarked },
   { label: "Settings", icon: Settings },

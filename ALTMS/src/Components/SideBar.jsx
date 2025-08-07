@@ -30,11 +30,11 @@ function SideBar(props) {
                 </div>
                 <nav className="p-4 space-y-2 flex flex-col h-[calc(100vh-4rem)]">
                     <div>
-                        {props.navItems.map(({ label, icon: Icon }) => (
+                        {props.navItems.map(({ label, icon: Icon, active }) => (
                             <a
                                 href="#"
                                 key={label}
-                                className="flex items-center gap-3 text-white py-2 px-3 rounded-lg hover:bg-emerald-700"
+                                className={`flex items-center gap-3 text-white py-2 px-3 rounded-lg ${active ? "bg-white/10" : "hover:bg-white/5"} hover:bg-emerald-700`}
                                 // className={`flex items-center gap-3 px-4 py-3 rounded-lg transition ${active ? "bg-white/10" : "hover:bg-white/5"}`}
                             >
                                 <Icon size={18} color="white" />

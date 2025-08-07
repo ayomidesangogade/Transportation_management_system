@@ -16,7 +16,7 @@ import Input from "../Components/Input";
 
 const navItems = [
   { label: "Dashboard", icon: LayoutDashboard },
-  { label: "Request Transport", icon: FileClock },
+  { label: "Request Transport", icon: FileClock, active: true },
   { label: "Booking History", icon: BookMarked },
   { label: "Settings", icon: Settings },
 ];

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { act, useState } from "react";
 import {
   Truck,
   CalendarRange,
@@ -33,14 +33,14 @@ const drivers = [
 ];
 
 const recentRequests = [
-  { department: "Facilities", destination: "Warehouse", status: "Approved", vehicle: "VAN‑012", driver: "Daniel Knight" },
-  { department: "Admissions", destination: "Clinic", status: "Pending", vehicle: "—", driver: "—" },
-  { department: "Academics", destination: "Conference Center", status: "Completed", vehicle: "BUS‑005", driver: "Rachel Greene" },
+  { department: "Computer Science", destination: "CLT", status: "Approved", vehicle: "VAN‑012", driver: "Daniel Knight" },
+  { department: "Chemistry", destination: "Clinic", status: "Pending", vehicle: "—", driver: "—" },
+  { department: "Physics", destination: "Conference Center", status: "Completed", vehicle: "BUS‑005", driver: "Rachel Greene" },
   { department: "Research", destination: "Library", status: "Approved", vehicle: "SED‑001", driver: "Brandon Watts" },
 ];
 
 const navItems = [
-  { label: "Dashboard", icon: LayoutDashboard },
+  { label: "Dashboard", icon: LayoutDashboard, active: true },
   { label: "Vehicle Management", icon: Truck },
   { label: "Scheduling", icon: CalendarRange },
   { label: "Tracking", icon: Map },

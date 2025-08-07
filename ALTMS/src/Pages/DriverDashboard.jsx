@@ -14,7 +14,7 @@ import SideBar from "../Components/SideBar";
 import StatCard from "../Components/StatCard";
 
 const navItems = [
-  { label: "Dashboard", icon: CheckCircle},
+  { label: "Dashboard", icon: CheckCircle, active: true },
   { label: "Request Tracker", icon: ClipboardList },
   { label: "Vehicle Management", icon: Truck },
   { label: "Driver List", icon: Users },

@@ -10,6 +10,9 @@ import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import SideBar from "../Components/SideBar";
 import Header from "../Components/Header";
+import Field from "../Components/Field";
+import Select from "../Components/Select";
+import Input from "../Components/Input";
 
 const navItems = [
   { label: "Dashboard", icon: LayoutDashboard },
@@ -109,37 +112,6 @@ export default function RequestTransportPage() {
           </div>
         </main>
       </section>
-    </div>
-  );
-}
-
-function Field({ label, children }) {
-  return (
-    <div className="space-y-2">
-      <label className="text-sm font-medium text-gray-700">{label}</label>
-      {children}
-    </div>
-  );
-}
-
-function Select({ placeholder }) {
-  return (
-    <select className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-600 text-sm text-gray-700" defaultValue="">
-      <option value="" disabled hidden>{placeholder}</option>
-      <option value="Science">Science</option>
-      <option value="SUB">SUB</option>
-      <option value="Technology">Technology</option>
-    </select>
-  );
-}
-
-function Input({ icon: Icon, ...props }) {
-  return (
-    <div className="relative">
-      {Icon && <Icon size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />}
-      <input
-        {...props}
-        className={`w-full border rounded-lg px-3 py-2 pl-${Icon ? "8" : "3"} focus:outline-none focus:ring-2 focus:ring-emerald-600 text-sm`} />
     </div>
   );
 }

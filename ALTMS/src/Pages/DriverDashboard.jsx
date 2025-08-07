@@ -24,7 +24,7 @@ const navItems = [
 
 const assignedTrips = [
   { time: "8:00 AM", dest: "Science" },
-  { time: "10:00 AM", dest: "Library" },
+  { time: "10:00 AM", dest: "Kenneth Dike Library" },
   { time: "1:00 PM", dest: "Main Entr…" },
   { time: "3:00 PM", dest: "Student Cen…" },
 ];

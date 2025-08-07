@@ -11,7 +11,7 @@ function Header(props) {
             >
               {props.state ? <X size={20} /> : <Menu size={20} />}
             </button>
-            <h1 className="text-base font-semibold text-gray-700 hidden md:block">
+            <h1 className="text-xl font-extrabold text-gray-700 hidden md:block">
               {props.name}
             </h1>
           </div>

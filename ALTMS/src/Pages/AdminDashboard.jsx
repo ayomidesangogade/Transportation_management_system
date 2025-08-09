@@ -34,7 +34,7 @@ const drivers = [
 
 const recentRequests = [
   { department: "Computer Science", destination: "CLT", status: "Approved", vehicle: "VAN‑012", driver: "Daniel Knight" },
-  { department: "Chemistry", destination: "Clinic", status: "Pending", vehicle: "—", driver: "—" },
+  { department: "Chemistry", destination: "JaJa Clinic", status: "Pending", vehicle: "—", driver: "—" },
   { department: "Physics", destination: "Conference Center", status: "Completed", vehicle: "BUS‑005", driver: "Rachel Greene" },
   { department: "Research", destination: "Library", status: "Approved", vehicle: "SED‑001", driver: "Brandon Watts" },
 ];

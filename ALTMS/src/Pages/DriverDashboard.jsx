@@ -56,7 +56,7 @@ export default function DriverDashboard() {
               <h3 className="font-semibold mb-2 text-lg">Next Assigned Trip</h3>
               <p className="flex items-center gap-2 text-lg font-medium">
                 <span className="h-3 w-3 rounded-full bg-emerald-600"></span>
-                Main Entrance → Engineering Building
+                Main Entrance → Civil Engineering Building
               </p>
               <p className="mt-4 text-xl font-semibold">11:00 AM</p>
               <p className="text-sm text-gray-600 mt-1">Contact: John Doe</p>

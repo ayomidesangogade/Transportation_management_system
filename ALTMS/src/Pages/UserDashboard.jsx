@@ -22,10 +22,10 @@ const stats = [
 ];
 
 const recentRequests = [
-  { date: "20/04/2025", destination: "Library", vehicle: "Minibus", status: "Pending" },
-  { date: "15/04/2025", destination: "Athletics Field", vehicle: "Van", status: "Approved" },
-  { date: "10/04/2025", destination: "Research Center", vehicle: "Sedan", status: "Approved" },
-  { date: "05/04/2025", destination: "Student Union", vehicle: "SUV", status: "Rejected" },
+  { date: "20/07/2025", destination: "Kenneth Dike Library", vehicle: "Minibus", status: "Pending" },
+  { date: "15/07/2025", destination: "Faculty of Computing", vehicle: "Van", status: "Approved" },
+  { date: "10/07/2025", destination: "CBN", vehicle: "Sedan", status: "Approved" },
+  { date: "05/07/2025", destination: "Student Union Building", vehicle: "SUV", status: "Rejected" },
 ];
 
 const statusColours = {

@@ -10,6 +10,7 @@ import {
   FileClock,
   BookMarked,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import SideBar from "../Components/SideBar"
 import Header from "../Components/Header";
 import QuickLink from "../Components/QuickLink";
@@ -35,10 +36,10 @@ const statusColours = {
 };
 
 const navItems = [
-  { label: "Dashboard", icon: LayoutDashboard, active: true },
-  { label: "Request Transport", icon: FileClock },
-  { label: "Booking History", icon: BookMarked },
-  { label: "Settings", icon: Settings },
+  { label: "Dashboard", icon: LayoutDashboard, active: true, to: "/staff" },
+  { label: "Request Transport", icon: FileClock, to: "/request" },
+  { label: "Booking History", icon: BookMarked, to: "#" },
+  { label: "Settings", icon: Settings, to: "#" },
 ]
 
 export default function StaffDashboard() {
@@ -122,7 +123,7 @@ export default function StaffDashboard() {
               <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-lg bg-emerald-700 flex items-center justify-center text-white">
                 <Bus size={24} />
               </div>
-              <span className="text-base sm:text-lg font-semibold text-emerald-900">Make New Transport Request</span>
+              <Link to="/request" className="text-base sm:text-lg font-semibold text-emerald-900">Make New Transport Request</Link>
             </button>
           </section>
 

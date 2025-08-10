@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import RightImage from "../images/20250712_2257_Map with Van Icon_remix_01k00a4336f7rr3g19hjhksjbx.png"
 import UILogo from "../images/university-of-ibadan-logo-transparent.png"
+import { useNavigate, Link } from "react-router-dom";
 import "../index.css"; // Ensure Tailwind CSS is imported
 
 // Available user roles
@@ -10,7 +11,16 @@ const roles = ["Admin", "Staff/Student", "Driver"];
 export default function LoginPage() {
   const [role, setRole] = useState("Admin");
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate()
 
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    // Redirect based on role
+    if (role === "Admin") navigate("/admin");
+    else if (role === "Staff/Student") navigate("/staff");
+    else if (role === "Driver") navigate("/driver");
+  }
 return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#e6f1f4] to-[#d9ebee] p-6">
         <div className="w-full max-w-4xl bg-white rounded-3xl shadow-lg overflow-hidden flex flex-col md:flex-row">
@@ -26,7 +36,7 @@ return (
                 </header>
 
                 {/* Login Form */}
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={handleSubmit}>
                     {/* Email */}
                     <div>
                         <label className="block font-medium mb-1" htmlFor="email">
@@ -103,9 +113,9 @@ return (
                 {/* Register link */}
                 <p className="text-sm text-center mt-4">
                     Don’t have an account?{' '}
-                    <a href="/register" className="text-emerald-600 font-medium hover:underline">
+                    <Link to="/register" className="text-emerald-600 font-medium hover:underline">
                         Register
-                    </a>
+                    </Link>
                 </p>
             </div>
 

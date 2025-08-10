@@ -15,7 +15,7 @@ import Select from "../Components/Select";
 import Input from "../Components/Input";
 
 const navItems = [
-  { label: "Dashboard", icon: LayoutDashboard },
+  { label: "Dashboard", icon: LayoutDashboard, to: "/staff" },
   { label: "Request Transport", icon: FileClock, active: true },
   { label: "Booking History", icon: BookMarked },
   { label: "Settings", icon: Settings },

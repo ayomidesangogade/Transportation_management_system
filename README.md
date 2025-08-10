@@ -85,5 +85,5 @@ This project is for educational and demonstration purposes.
 ---
 
 **Developed by:**  
-Your Name / Team  
+GROUP 14 CSC 476 
 University of Ibadan (Sample Branding)
